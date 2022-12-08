@@ -31,14 +31,14 @@ let mongoUrlDocker = "mongodb://admin:password@mongodb";
 // pass these options to mongo client connect request to avoid DeprecationWarning for current Server Discovery and Monitoring engine
 let mongoClientOptions = { useNewUrlParser: true, useUnifiedTopology: true };
 
-// "user-account" in demo with docker. "my-db" in demo with docker-compose
+// "Create user-account" in mongoDb.
 let databaseName = "user-account";
 
 app.post("/update-profile", function (req, res) {
   let userObj = req.body;
 
   MongoClient.connect(
-    mongoUrlDocker,
+    mongoUrlLocal,
     mongoClientOptions,
     function (err, client) {
       if (err) throw err;
@@ -68,7 +68,7 @@ app.get("/get-profile", function (req, res) {
   let response = {};
   // Connect to the db
   MongoClient.connect(
-    mongoUrlDocker,
+    mongoUrlLocal,
     mongoClientOptions,
     function (err, client) {
       if (err) throw err;
