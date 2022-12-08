@@ -46,13 +46,13 @@ Step 7: Access you nodejs application UI from browser
 
 Step 1: start mongodb and mongo-express
 
-    docker-compose -f docker-compose.yaml up
+    docker-compose -f docker-compose.yaml up -d
     
 _You can access the mongo-express under localhost:8080 from your browser_
     
-Step 2: in mongo-express UI - create a new database "my-db"
+Step 2: in mongo-express UI - create a new database "user-account"
 
-Step 3: in mongo-express UI - create a new collection "users" in the database "my-db"       
+Step 3: in mongo-express UI - create a new collection "users" in the database "user-account"       
     
 Step 4: start node server 
 
